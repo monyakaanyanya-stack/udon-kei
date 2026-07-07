@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>手打ちうどん 恵（けい）｜荻窪・天沼</title>
+<meta name="description" content="荻窪・天沼の手打ちうどん「恵（けい）」。息子が打ち、母が支える親子の店。その日に打つ中太麺の強いコシと、煮干しのまろやかな出汁。一杯800円から、ふらっと一杯を。">
+<meta property="og:title" content="手打ちうどん 恵（けい）｜荻窪・天沼">
+<meta property="og:description" content="その日に打つ、親子二人の手打ちうどん。打ちたてのコシと煮干しの出汁を、荻窪の路地で。一杯800円から。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/dish-signature.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f7f2ea;
+  --paper-2:#efe7d6;
+  --paper-3:#e7dcc6;
+  --sumi:#241c14;
+  --sumi-soft:#6a5c48;
+  --muted:#a2937a;
+  --ai:#2b4d66;        /* 藍・アクセント（CTA/罫/強調） */
+  --ai-deep:#1f3a4e;
+  --yamabuki:#cf9526;  /* 山吹・のれんのブランド色（極小面積の印のみ） */
+  --dark:#1a140d;
+  --line:#dccfb6;
+
+  --space-1:8px; --space-2:16px; --space-3:24px; --space-4:40px;
+  --space-5:64px; --space-6:96px; --space-7:160px;
+
+  --serif:"Shippori Mincho", serif;
+  --sans:"Noto Sans JP", sans-serif;
+
+  --r-sm:4px; --r-lg:16px;
+  --shadow:0 10px 44px rgb(36 28 20 / .12);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--sumi);background:var(--paper);
+  line-height:1.9;font-weight:400;letter-spacing:.02em;overflow-x:hidden}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important}
+}
+img{display:block;max-width:100%}
+
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.4;letter-spacing:.04em;
+  font-feature-settings:"palt";word-break:auto-phrase}
+p,li{word-break:auto-phrase}
+
+.wrap{width:100%;max-width:1160px;margin:0 auto;padding:0 var(--space-3);position:relative}
+.narrow{max-width:720px}
+
+/* ラベル（英字・muted。全体で3節まで） */
+.label{font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.28em;
+  text-transform:uppercase;color:var(--ai);display:inline-flex;align-items:center;gap:.7em}
+.label::before{content:"";width:24px;height:1px;background:var(--yamabuki)}
+
+/* ── ヘッダー ── */
+header{position:fixed;top:0;left:0;right:0;z-index:50;padding:var(--space-3) 0;
+  transition:padding .3s ease, background .3s ease, box-shadow .3s ease}
+header.scrolled{padding:12px 0;background:rgb(247 242 234 / .9);
+  backdrop-filter:blur(12px);box-shadow:0 1px 0 rgb(36 28 20 / .08)}
+.head-in{display:flex;align-items:center;justify-content:space-between}
+.brand{font-family:var(--serif);font-weight:700;font-size:21px;letter-spacing:.16em;
+  color:var(--paper);text-decoration:none;display:flex;align-items:baseline;gap:.55em;
+  text-shadow:0 1px 12px rgb(0 0 0 / .4);transition:color .3s, text-shadow .3s}
+.brand small{font-family:var(--sans);font-size:10px;letter-spacing:.24em;font-weight:500;opacity:.85}
+header.scrolled .brand{color:var(--sumi);text-shadow:none}
+.nav{display:flex;gap:var(--space-4);align-items:center}
+.nav a{color:var(--paper);text-decoration:none;font-size:14px;letter-spacing:.08em;
+  position:relative;transition:color .25s;text-shadow:0 1px 10px rgb(0 0 0 / .4)}
+header.scrolled .nav a{color:var(--sumi-soft);text-shadow:none}
+.nav a.txt::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1px;
+  background:var(--yamabuki);transition:width .3s ease}
+.nav a.txt:hover::after{width:100%}
+.nav .cta{color:var(--paper);background:var(--ai);padding:11px 20px;border-radius:100px;
+  letter-spacing:.06em;transition:transform .2s, background .25s;text-shadow:none}
+.nav .cta:hover{background:var(--ai-deep);transform:translateY(-2px);color:var(--paper)}
+@media(max-width:760px){.nav .txt{display:none}}
+
+/* ── ボタン ── */
+.btn{display:inline-flex;align-items:center;gap:.6em;font-family:var(--sans);font-size:15px;
+  font-weight:500;letter-spacing:.06em;padding:15px 32px;border-radius:100px;text-decoration:none;
+  cursor:pointer;transition:transform .2s ease, box-shadow .2s ease, background .25s ease, border-color .25s}
+.btn-primary{background:var(--ai);color:var(--paper);box-shadow:0 8px 24px rgb(43 77 102 / .3)}
+.btn-primary:hover{background:var(--ai-deep);transform:translateY(-3px);box-shadow:0 14px 32px rgb(43 77 102 / .38)}
+.btn-primary:active{transform:translateY(0)}
+.btn-primary svg{width:16px;height:16px;stroke:currentColor;transition:transform .25s}
+.btn-primary:hover svg{transform:translateX(3px)}
+.btn-ghost{background:transparent;color:var(--sumi);border:1px solid var(--line)}
+.btn-ghost:hover{border-color:var(--sumi);transform:translateY(-3px)}
+.btn-light{background:rgb(247 242 234 / .16);color:var(--paper);border:1px solid rgb(247 242 234 / .5);
+  backdrop-filter:blur(6px)}
+.btn-light:hover{background:rgb(247 242 234 / .28);transform:translateY(-3px)}
+
+/* ── ヒーロー（全面写真） ── */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
+.hero-img{position:absolute;inset:0;z-index:0}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:center 42%;
+  animation:kenburns 20s ease-out both}
+@keyframes kenburns{from{transform:scale(1.08)}to{transform:scale(1)}}
+.hero-img::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg, rgb(20 15 9 / .5) 0%, rgb(20 15 9 / .05) 32%, rgb(20 15 9 / .15) 62%, rgb(20 15 9 / .82) 100%)}
+.hero-in{position:relative;z-index:2;width:100%;padding-bottom:clamp(64px,10vw,120px);color:var(--paper)}
+.hero .eyebrow{font-family:var(--sans);font-size:13px;letter-spacing:.3em;font-weight:500;
+  margin-bottom:var(--space-3);color:#f5e6c4;text-transform:uppercase}
+.hero h1{font-size:clamp(3rem,10vw,6rem);font-weight:700;line-height:1.08;letter-spacing:.06em;
+  margin-bottom:var(--space-3);text-shadow:0 2px 30px rgb(0 0 0 / .35)}
+.hero h1 .r{font-size:.34em;letter-spacing:.2em;font-weight:500;vertical-align:.5em;margin-left:.3em}
+.hero .lead{font-family:var(--serif);font-size:clamp(1.1rem,2.7vw,1.5rem);line-height:1.9;
+  letter-spacing:.05em;max-width:26em;margin-bottom:var(--space-2);text-shadow:0 1px 16px rgb(0 0 0 / .4)}
+.hero .price-note{font-size:14px;letter-spacing:.08em;color:#f5e6c4;margin-bottom:var(--space-4)}
+.hero .price-note b{font-family:var(--serif);font-size:1.5em;font-weight:600;letter-spacing:.02em}
+.hero-cta{display:flex;gap:var(--space-2);flex-wrap:wrap}
+.scroll-hint{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);z-index:3;
+  font-size:10px;letter-spacing:.24em;color:rgb(247 242 234 / .8);text-transform:uppercase;
+  display:flex;flex-direction:column;align-items:center;gap:8px}
+.scroll-hint span{width:1px;height:34px;background:linear-gradient(#f5e6c4,transparent);
+  animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.3;transform:scaleY(.7)}50%{opacity:1;transform:scaleY(1)}}
+
+/* ── セクション共通 ── */
+section{position:relative}
+.pad{padding:clamp(96px,12vw,160px) 0}
+.sec-head{margin-bottom:var(--space-5)}
+.sec-head h2{font-size:clamp(1.8rem,4.4vw,2.7rem);margin-top:var(--space-2);line-height:1.4}
+.sec-head .jp-sub{color:var(--sumi-soft);font-family:var(--serif);font-size:15px;
+  letter-spacing:.12em;margin-top:var(--space-2)}
+
+/* ── 導入バンド ── */
+.intro{text-align:center;background:var(--paper)}
+.intro .kicker{font-family:var(--sans);font-size:13px;letter-spacing:.24em;color:var(--ai);
+  font-weight:500;margin-bottom:var(--space-3)}
+.intro h2{font-family:var(--serif);font-size:clamp(1.5rem,4.2vw,2.4rem);font-weight:600;
+  line-height:1.9;letter-spacing:.05em;max-width:22em;margin:0 auto}
+.intro h2 .em{color:var(--ai);position:relative;white-space:nowrap}
+.intro .sig{margin-top:var(--space-4);font-family:var(--serif);color:var(--sumi-soft);
+  font-size:15px;letter-spacing:.14em}
+
+/* ── 交互スプリット（料理×文章） ── */
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,6vw,88px);align-items:center}
+.split.rev .figure{order:2}
+.split .figure{position:relative}
+.split .figure img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r-lg);
+  box-shadow:var(--shadow)}
+.split .figure .cap{position:absolute;bottom:-14px;left:-14px;background:var(--paper);
+  color:var(--sumi);font-family:var(--serif);font-size:13px;letter-spacing:.1em;
+  padding:8px 16px;border-radius:100px;box-shadow:0 6px 20px rgb(36 28 20 / .14)}
+.split .figure .cap b{color:var(--ai);font-weight:600}
+.split .body h2{font-size:clamp(1.7rem,3.8vw,2.5rem);margin:var(--space-2) 0 var(--space-3);line-height:1.5}
+.split .body p{color:var(--sumi-soft);font-size:16px;margin-bottom:var(--space-3);max-width:32em}
+.split .body p strong{color:var(--sumi);font-weight:500}
+@media(max-width:840px){.split{grid-template-columns:1fr;gap:var(--space-4)}
+  .split.rev .figure{order:0}
+  .split .figure img{aspect-ratio:3/2}}
+
+/* ── 工程（手仕事） ── */
+.process{background:var(--dark);color:var(--paper);overflow:hidden}
+.process .label{color:#f0d79a}
+.process .label::before{background:var(--yamabuki)}
+.process .sec-head h2{color:var(--paper)}
+.process .sec-head .jp-sub{color:rgb(247 242 234 / .66)}
+.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-3)}
+.proc-step{position:relative}
+.proc-step .ph{position:relative;border-radius:var(--r-sm);overflow:hidden;margin-bottom:var(--space-2)}
+.proc-step .ph img{width:100%;aspect-ratio:3/4;object-fit:cover;transition:transform .8s cubic-bezier(.22,1,.36,1)}
+.proc-step:hover .ph img{transform:scale(1.05)}
+.proc-step .n{position:absolute;top:10px;left:12px;z-index:2;font-family:var(--serif);
+  font-size:26px;font-weight:600;color:var(--paper);text-shadow:0 2px 12px rgb(0 0 0 / .6)}
+.proc-step h3{font-size:1.15rem;letter-spacing:.08em;margin-bottom:4px;color:var(--paper)}
+.proc-step p{font-size:13px;color:rgb(247 242 234 / .68);line-height:1.8}
+@media(max-width:760px){.proc-grid{grid-template-columns:repeat(2,1fr);gap:var(--space-3) var(--space-2)}}
+
+/* ── 親子（家族） ── */
+.family{background:var(--paper-2)}
+.family-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px);align-items:center}
+.family-grid .figure img{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:center 32%;
+  border-radius:var(--r-lg);box-shadow:var(--shadow)}
+.family .fam-head{font-size:clamp(1.7rem,3.8vw,2.4rem);letter-spacing:.1em;
+  margin-bottom:var(--space-3);color:var(--sumi)}
+.family .lead{font-family:var(--serif);font-size:clamp(1.15rem,2.6vw,1.5rem);
+  line-height:1.95;letter-spacing:.05em;margin-bottom:var(--space-3)}
+.family .lead .em{color:var(--ai)}
+.family p.body{color:var(--sumi-soft);font-size:16px;max-width:34em}
+@media(max-width:840px){.family-grid{grid-template-columns:1fr;gap:var(--space-4)}
+  .family-grid .figure{order:-1}}
+
+/* ── お品書き ── */
+.menu-sec{background:var(--paper)}
+.menu-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(32px,5vw,72px);align-items:start}
+@media(max-width:900px){.menu-grid{grid-template-columns:1fr;gap:var(--space-5)}}
+.menu-cols{columns:1}
+.menu-block{margin-bottom:var(--space-5)}
+.menu-block:last-child{margin-bottom:0}
+.menu-block h3{font-size:1.25rem;letter-spacing:.1em;padding-bottom:var(--space-2);
+  margin-bottom:var(--space-1);border-bottom:2px solid var(--sumi);display:flex;
+  align-items:baseline;justify-content:space-between}
+.menu-block h3 .en{font-family:var(--sans);font-size:11px;letter-spacing:.2em;color:var(--muted);
+  font-weight:500;text-transform:uppercase}
+.menu-list{list-style:none}
+.menu-list li{display:flex;align-items:baseline;gap:10px;padding:12px 2px;
+  border-bottom:1px dashed var(--line)}
+.menu-list li:last-child{border-bottom:none}
+.menu-list .name{font-family:var(--serif);font-size:1.08rem;font-weight:500;white-space:nowrap}
+.menu-list .name .rb{font-size:.66em;color:var(--sumi-soft);margin-left:.2em}
+.menu-list .dot{flex:1;border-bottom:1px dotted var(--line);transform:translateY(-4px)}
+.menu-list .price{font-family:var(--sans);font-weight:500;font-variant-numeric:tabular-nums;
+  letter-spacing:.02em;white-space:nowrap}
+.menu-list .price small{font-size:.72em;color:var(--sumi-soft);margin-left:1px}
+.menu-list.topping{columns:2;column-gap:var(--space-4)}
+.menu-list.topping li{break-inside:avoid}
+.menu-list .tag{font-size:10px;letter-spacing:.1em;color:var(--paper);background:var(--yamabuki);
+  padding:2px 7px;border-radius:3px;margin-left:6px;white-space:nowrap;vertical-align:middle}
+.menu-aside{position:sticky;top:100px}
+.menu-aside .figure img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r-lg);
+  box-shadow:var(--shadow)}
+.menu-aside .note{margin-top:var(--space-3);color:var(--sumi-soft);font-size:13px;line-height:1.9}
+.menu-aside .note em{color:var(--ai);font-style:normal}
+.menu-aside .price-lead{font-family:var(--serif);font-size:1.05rem;color:var(--sumi);
+  letter-spacing:.06em;margin-bottom:var(--space-1)}
+.menu-aside .price-lead b{color:var(--ai);font-size:1.5em;font-weight:600}
+@media(max-width:900px){.menu-aside{position:static}
+  .menu-aside .figure img{aspect-ratio:3/2}}
+@media(max-width:480px){.menu-list.topping{columns:1}}
+
+/* ── 店の様子（モザイク） ── */
+.atmos{background:var(--paper-2)}
+.mosaic{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:200px 200px;
+  gap:var(--space-2);margin-top:var(--space-5)}
+.mosaic figure{overflow:hidden;border-radius:var(--r-sm);position:relative}
+.mosaic img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.22,1,.36,1)}
+.mosaic figure:hover img{transform:scale(1.05)}
+.mosaic .m1{grid-row:span 2}
+@media(max-width:760px){.mosaic{grid-template-columns:1fr 1fr;grid-template-rows:160px 160px 160px}
+  .mosaic .m1{grid-column:span 2;grid-row:span 1;height:220px}}
+
+/* ── アクセス ── */
+.access{background:var(--paper)}
+.access-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px);align-items:start}
+@media(max-width:840px){.access-grid{grid-template-columns:1fr;gap:var(--space-5)}}
+.info-list{list-style:none;margin-bottom:var(--space-4)}
+.info-list li{display:grid;grid-template-columns:96px 1fr;gap:var(--space-2);
+  padding:var(--space-3) 0;border-bottom:1px solid var(--line)}
+.info-list li:first-child{border-top:1px solid var(--line)}
+.info-list .k{font-family:var(--serif);font-weight:500;color:var(--sumi);letter-spacing:.1em;font-size:15px}
+.info-list .v{color:var(--sumi-soft);font-size:15px;line-height:1.9}
+.info-list .v b{color:var(--sumi);font-weight:500}
+.info-list .v .req{color:var(--ai);font-size:12px;letter-spacing:.04em}
+.hours-tbl{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;font-size:14px}
+.hours-tbl .d{font-family:var(--serif);color:var(--sumi);letter-spacing:.06em}
+.hours-tbl .t{color:var(--sumi-soft);font-variant-numeric:tabular-nums}
+.access-cta{display:flex;flex-direction:column;gap:var(--space-2);align-items:flex-start}
+.map-figure img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:var(--r-lg);box-shadow:var(--shadow)}
+.map-figure figcaption{font-size:12px;color:var(--muted);letter-spacing:.06em;margin-top:var(--space-2);text-align:center}
+
+/* ── フッター ── */
+footer{background:var(--dark);color:var(--paper);padding:var(--space-6) 0 var(--space-4);text-align:center}
+footer .f-brand{font-family:var(--serif);font-size:clamp(1.8rem,6vw,2.6rem);font-weight:600;
+  letter-spacing:.24em;margin-bottom:var(--space-2)}
+footer .f-sub{color:rgb(247 242 234 / .6);font-size:13px;letter-spacing:.14em;margin-bottom:var(--space-4)}
+footer .f-links{display:flex;gap:var(--space-3);justify-content:center;margin-bottom:var(--space-4);flex-wrap:wrap}
+footer .f-links a{color:var(--paper);text-decoration:none;font-size:14px;letter-spacing:.08em;
+  display:inline-flex;align-items:center;gap:.5em;opacity:.85;transition:opacity .25s, color .25s}
+footer .f-links a:hover{opacity:1;color:var(--yamabuki)}
+footer .f-links svg{width:17px;height:17px;stroke:currentColor;fill:none}
+footer .copy{color:rgb(247 242 234 / .4);font-size:12px;letter-spacing:.06em;
+  border-top:1px solid rgb(247 242 234 / .12);padding-top:var(--space-3);margin-top:var(--space-2)}
+
+/* ── リベール ── */
+.reveal{opacity:0;transform:translateY(28px);
+  transition:opacity .9s cubic-bezier(.22,1,.36,1), transform .9s cubic-bezier(.22,1,.36,1)}
+.reveal.is-in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="wrap head-in">
+    <a href="#top" class="brand">恵 <small>TEUCHI UDON KEI</small></a>
+    <nav class="nav">
+      <a href="#dish" class="txt">この一杯</a>
+      <a href="#menu" class="txt">お品書き</a>
+      <a href="#access" class="txt">アクセス</a>
+      <a href="#access" class="cta">お店の場所を見る</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ── ヒーロー ── -->
+<section class="hero" id="top">
+  <div class="hero-img">
+    <img src="images/hero-noodles.jpg" alt="打ちたての中太うどん。艶のある麺が丼に盛られている">
+  </div>
+  <div class="wrap hero-in">
+    <p class="eyebrow">荻窪・天沼　手打ちうどん</p>
+    <h1>恵<span class="r">けい</span></h1>
+    <p class="lead">その日に打つ<br>だからコシが違う<br>親子で営む 荻窪の小さなうどん屋</p>
+    <p class="price-note">かけの一杯 <b>800円</b>から<br>仕事帰りに ふらっと</p>
+    <div class="hero-cta">
+      <a href="#access" class="btn btn-primary">お店の場所を見る
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="#menu" class="btn btn-light">お品書きを見る</a>
+    </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true">Scroll<span></span></div>
+</section>
+
+<!-- ── 導入バンド ── -->
+<section class="intro pad">
+  <div class="wrap narrow reveal">
+    <p class="kicker">荻窪の路地の うどん屋</p>
+    <h2>飾らない一杯に<span class="em">手仕事の芯</span>を<br>気取らず けれど本気で</h2>
+    <p class="sig">— 手打ちうどん 恵</p>
+  </div>
+</section>
+
+<!-- ── この一杯（看板） ── -->
+<section class="pad" id="dish">
+  <div class="wrap split">
+    <div class="figure reveal">
+      <img src="images/dish-signature.jpg" alt="青菜・油揚げ・ねぎをのせた恵のうどん。まろやかな出汁が張られている">
+      <span class="cap"><b>恵うどん</b>　850円</span>
+    </div>
+    <div class="body reveal">
+      <span class="label">A BOWL OF KEI</span>
+      <h2>打ちたての<br>コシと出汁</h2>
+      <p><strong>その日に打つからコシが強い</strong><br>中太の麺は角が立ち 噛むほどに小麦の甘みが返ってきます</p>
+      <p><strong>出汁は煮干し（いりこ）から</strong><br>きつい匂いはなく まろやか<br>最後の一滴まで飲み干したくなる やさしい味わい</p>
+      <p>特別な日のためのうどんではありません<br>仕事の合間に 仕事の帰りに<br>今日の一杯として どうぞ</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── 工程（手仕事） ── -->
+<section class="process pad" id="process">
+  <div class="wrap">
+    <div class="sec-head narrow reveal" style="text-align:center;margin-inline:auto">
+      <span class="label" style="justify-content:center">HANDMADE</span>
+      <h2>その日の小麦を 四つの手で</h2>
+      <p class="jp-sub">機械には出せないコシは 毎日の手仕事から生まれます</p>
+    </div>
+    <div class="proc-grid">
+      <div class="proc-step reveal">
+        <div class="ph"><span class="n">一</span><img src="images/process-knead.jpg" alt="足で生地を踏み、うどんの生地を鍛える工程"></div>
+        <h3>踏む</h3>
+        <p>体重をかけて生地を踏み 寝かせる<br>コシの土台をつくる</p>
+      </div>
+      <div class="proc-step reveal">
+        <div class="ph"><span class="n">二</span><img src="images/process-cut.jpg" alt="伸ばした生地を包丁で細く切り出す工程。切りたての麺"></div>
+        <h3>切る</h3>
+        <p>伸ばした生地を一本ずつ手切り<br>中太の角が立つ</p>
+      </div>
+      <div class="proc-step reveal">
+        <div class="ph"><span class="n">三</span><img src="images/process-boil.jpg" alt="大釜でうどんを茹でる工程。湯気が立ちのぼる"></div>
+        <h3>茹でる</h3>
+        <p>大釜でたっぷりの湯に泳がせ 芯まで火を通す</p>
+      </div>
+      <div class="proc-step reveal">
+        <div class="ph"><span class="n">四</span><img src="images/process-chill.jpg" alt="茹で上げた麺を冷水で締める工程。水でしめて艶とコシを出す"></div>
+        <h3>締める</h3>
+        <p>冷水で一気に締める<br>艶が生まれ コシが際立つ</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 親子で ── -->
+<section class="family pad" id="family">
+  <div class="wrap family-grid">
+    <div class="text reveal">
+      <h2 class="fam-head">親子ふたりで</h2>
+      <p class="lead">いま麺を打つのは <span class="em">息子</span><br>それを支えるのは <span class="em">母</span></p>
+      <p class="body">カウンター六席と 二人掛けがひとつ 小さな店を親子で切り盛りしています<br>以前は母がひとりで打っていた手打ちを いまは息子が受け継ぎました<br>変わらないのは その日打ちの一杯と 気取らない台所のような時間<br>のれんをくぐれば いつもの顔が待っています</p>
+    </div>
+    <div class="figure reveal">
+      <img src="images/family.jpg" alt="のれんの前に並ぶ、店主の息子とお母様。手打ちうどん恵の親子">
+    </div>
+  </div>
+</section>
+
+<!-- ── お品書き ── -->
+<section class="menu-sec pad" id="menu">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="label">MENU</span>
+      <h2>お品書き</h2>
+      <p class="jp-sub">温かいのも 冷たいのも<br>まずは一杯から</p>
+    </div>
+    <div class="menu-grid">
+      <div class="reveal">
+        <div class="menu-block">
+          <h3>うどん <span class="en">Udon</span></h3>
+          <ul class="menu-list">
+            <li><span class="name">あつもりうどん</span><span class="dot"></span><span class="price">800<small>円</small></span></li>
+            <li><span class="name">ひやもりうどん</span><span class="dot"></span><span class="price">800<small>円</small></span></li>
+            <li><span class="name">恵うどん<span class="rb">けい</span></span><span class="tag">名物</span><span class="dot"></span><span class="price">850<small>円</small></span></li>
+            <li><span class="name">たぬきうどん</span><span class="dot"></span><span class="price">900<small>円</small></span></li>
+            <li><span class="name">きつねうどん</span><span class="dot"></span><span class="price">950<small>円</small></span></li>
+            <li><span class="name">月見うどん</span><span class="dot"></span><span class="price">950<small>円</small></span></li>
+            <li><span class="name">合わせうどん</span><span class="tag">人気</span><span class="dot"></span><span class="price">1,000<small>円</small></span></li>
+            <li><span class="name">五目いなり</span><span class="dot"></span><span class="price">300<small>円</small></span></li>
+          </ul>
+        </div>
+        <div class="menu-block">
+          <h3>うどんの中に <span class="en">Topping</span></h3>
+          <ul class="menu-list topping">
+            <li><span class="name">あげ玉</span><span class="dot"></span><span class="price">100<small>円</small></span></li>
+            <li><span class="name">小ねぎ</span><span class="dot"></span><span class="price">100<small>円</small></span></li>
+            <li><span class="name">長ねぎ</span><span class="dot"></span><span class="price">150<small>円</small></span></li>
+            <li><span class="name">玉子</span><span class="dot"></span><span class="price">150<small>円</small></span></li>
+            <li><span class="name">青菜</span><span class="dot"></span><span class="price">150<small>円</small></span></li>
+            <li><span class="name">あぶらあげ</span><span class="dot"></span><span class="price">200<small>円</small></span></li>
+            <li><span class="name">あげもち</span><span class="dot"></span><span class="price">200<small>円</small></span></li>
+            <li><span class="name">ねり梅</span><span class="dot"></span><span class="price">250<small>円</small></span></li>
+            <li><span class="name">甘いあげ</span><span class="dot"></span><span class="price">300<small>円</small></span></li>
+            <li><span class="name">あげなす</span><span class="dot"></span><span class="price">300<small>円</small></span></li>
+            <li><span class="name">ごぼう天</span><span class="dot"></span><span class="price">300<small>円</small></span></li>
+            <li><span class="name">豚肉</span><span class="dot"></span><span class="price">450<small>円</small></span></li>
+            <li><span class="name">かきあげ</span><span class="dot"></span><span class="price">550<small>円</small></span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="menu-aside reveal">
+        <div class="figure">
+          <img src="images/dish-tsuke.jpg" alt="つけうどんの膳。つけ汁のどんぶりと、締めた麺、五目いなり">
+        </div>
+        <p class="price-lead">一杯 <b>800円</b> から</p>
+        <p class="note">好きな具は「うどんの中に」から一品ずつ<br><em>【要確認】</em> 価格・品書きは変わることがあります 最新はお店にてご確認ください</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 店の様子 ── -->
+<section class="atmos pad" id="atmos">
+  <div class="wrap">
+    <div class="sec-head narrow reveal">
+      <h2>のれんの内がわ</h2>
+      <p class="jp-sub">木のカウンターと 手に馴染む器<br>AMラジオの流れる 静かな昼</p>
+    </div>
+    <div class="mosaic reveal">
+      <figure class="m1"><img src="images/dish-overhead.jpg" alt="青菜 油揚げ 天かす ねぎをのせた 恵の一杯"></figure>
+      <figure><img src="images/menu-board.jpg" style="object-position:center top" alt="手書きのお品書き きざみうどん 肉うどん カレーうどんなどが並ぶ"></figure>
+      <figure><img src="images/dish-broth.jpg" alt="豚肉とねぎの入った、あたたかいつけ汁"></figure>
+      <figure><img src="images/dish-inari.jpg" alt="青のりをのせた五目いなり。三百円のひと品"></figure>
+      <figure><img src="images/pot-foam.jpg" alt="ざるの中で出汁が勢いよく泡立つ 茹での一場面"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ── アクセス ── -->
+<section class="access pad" id="access">
+  <div class="wrap">
+    <div class="sec-head narrow reveal" style="text-align:center;margin-inline:auto">
+      <h2>お店へ ぜひ</h2>
+      <p class="jp-sub">荻窪の路地に のれんを掛けて待っています</p>
+    </div>
+    <div class="access-grid">
+      <div class="reveal">
+        <ul class="info-list">
+          <li><span class="k">店名</span><span class="v"><b>手打ちうどん 恵（けい）</b></span></li>
+          <li><span class="k">住所</span><span class="v">〒167-0032<br>東京都杉並区天沼2-3-7</span></li>
+          <li><span class="k">最寄り</span><span class="v">JR「荻窪駅」北口より徒歩5分<br>教会通り商店街 東京衛生病院手前</span></li>
+          <li><span class="k">営業時間</span><span class="v">
+            <div class="hours-tbl">
+              <span class="d">昼｜火〜土</span><span class="t">11:30 – 14:30</span>
+              <span class="d">昼｜日・祝</span><span class="t">11:30 – 16:00</span>
+              <span class="d">夜｜火〜土</span><span class="t">18:00 – 22:00</span>
+            </div>
+          </span></li>
+          <li><span class="k">定休日</span><span class="v">月曜日 および日曜・祝日の夜</span></li>
+          <li><span class="k">お電話</span><span class="v"><b><a href="tel:07064630888" style="color:inherit;text-decoration:none">070-6463-0888</a></b></span></li>
+        </ul>
+        <div class="access-cta">
+          <a href="https://maps.app.goo.gl/B3gz7mDrkMrf7wd98" target="_blank" rel="noopener" class="btn btn-primary">お店の場所を見る
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="https://www.instagram.com/teutiudonkei" target="_blank" rel="noopener" class="btn btn-ghost">Instagramを見る</a>
+        </div>
+      </div>
+      <div class="reveal">
+        <figure class="map-figure">
+          <img src="images/noren-logo.jpg" alt="山吹色ののれんに大きく染め抜かれた 恵の一文字">
+          <figcaption>山吹色ののれんが目印です</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-brand">恵</div>
+    <div class="f-sub">手打ちうどん ｜ 荻窪・天沼</div>
+    <div class="f-links">
+      <a href="https://www.instagram.com/teutiudonkei" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        Instagram
+      </a>
+      <a href="#menu">お品書き</a>
+      <a href="#access">アクセス</a>
+    </div>
+    <p class="copy">© 手打ちうどん 恵（けい）— 荻窪・天沼. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+// スクロールリベール（時差stagger）
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+}), { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => {
+  const sibs = [...el.parentElement.querySelectorAll(':scope > .reveal')];
+  el.style.transitionDelay = `${(Math.max(0,sibs.indexOf(el)) % 4) * 90}ms`;
+  io.observe(el);
+});
+
+// 固定ヘッダー（ヒーローを抜けたら地色化）
+const header = document.getElementById('header');
+const hero = document.getElementById('top');
+const hio = new IntersectionObserver(([e]) => {
+  header.classList.toggle('scrolled', !e.isIntersecting);
+}, { rootMargin: '-72px 0px 0px 0px', threshold: 0 });
+hio.observe(hero);
+</script>
+</body>
+</html>
